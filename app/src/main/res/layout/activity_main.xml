@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/rootScroll" android:layout_width="match_parent" android:layout_height="match_parent"
+  android:fillViewport="true" android:background="@drawable/bg_page">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:paddingLeft="24dp" android:paddingRight="24dp"
+    android:paddingTop="32dp" android:paddingBottom="28dp">
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:text="soundwave." android:textColor="#F7F4FF" android:textSize="29sp"
+      android:fontFamily="sans-serif-medium" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:layout_marginTop="4dp" android:text="Слушай. Сохраняй. Повторяй."
+      android:textSize="13sp" android:textColor="#A9A3BB" />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:layout_marginTop="30dp" android:background="@drawable/bg_card"
+      android:padding="18dp" android:orientation="vertical">
+      <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="ССЫЛКА НА ТРЕК" android:textSize="11sp" android:textStyle="bold"
+        android:letterSpacing="0.13" android:textColor="#B9A6F2" />
+      <EditText android:id="@+id/urlInput" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" android:singleLine="true"
+        android:inputType="textUri" android:selectAllOnFocus="true"
+        android:textColor="#F4F0FF" android:textColorHint="#817A93" android:textSize="14sp"
+        android:hint="https://soundcloud.com/..." android:background="@drawable/bg_edit" />
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="13dp">
+        <Button android:id="@+id/pasteButton" android:layout_width="0dp" android:layout_height="50dp"
+          android:layout_weight="1" android:text="Вставить" android:textAllCaps="false" android:textColor="#E8E1FD"
+          android:textSize="14sp" android:background="@drawable/bg_secondary" />
+        <Space android:layout_width="12dp" android:layout_height="1dp" />
+        <Button android:id="@+id/searchButton" android:layout_width="0dp" android:layout_height="50dp"
+          android:layout_weight="1.45" android:text="Найти" android:textAllCaps="false"
+          android:textStyle="bold" android:textColor="#FFFFFF" android:textSize="15sp"
+          android:background="@drawable/bg_primary" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/trackCard" android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:layout_marginTop="17dp" android:padding="18dp" android:orientation="vertical"
+      android:background="@drawable/bg_card" android:visibility="gone">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <FrameLayout android:layout_width="88dp" android:layout_height="88dp" android:background="@drawable/bg_cover">
+          <ImageView android:id="@+id/coverImage" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:scaleType="centerCrop" android:contentDescription="Обложка"/>
+          <TextView android:id="@+id/coverPlaceholder" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:text="♫" android:gravity="center" android:textColor="#CBB7FF" android:textSize="36sp" />
+        </FrameLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+          android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:orientation="vertical">
+          <TextView android:id="@+id/trackTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="#F8F5FF" android:textSize="17sp" android:textStyle="bold"
+            android:maxLines="3" android:text="Название трека"/>
+          <TextView android:id="@+id/trackArtist" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" android:textColor="#AEA5BE" android:textSize="13sp" android:text="Исполнитель"/>
+        </LinearLayout>
+      </LinearLayout>
+      <Button android:id="@+id/downloadButton" android:layout_width="match_parent" android:layout_height="54dp"
+        android:layout_marginTop="18dp" android:text="Скачать аудио" android:textAllCaps="false"
+        android:textColor="#FFFFFF" android:textSize="15sp" android:textStyle="bold" android:background="@drawable/bg_primary"/>
+    </LinearLayout>
+
+    <TextView android:id="@+id/statusLabel" android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:layout_marginTop="23dp" android:gravity="center" android:textSize="13sp"
+      android:text="Готов к поиску" android:textColor="#ADA4BE" />
+    <ProgressBar android:id="@+id/progress" style="?android:attr/progressBarStyleHorizontal"
+      android:layout_width="match_parent" android:layout_height="3dp"
+      android:layout_marginTop="12dp" android:indeterminate="true" android:visibility="gone"
+      android:progressTint="#A88AFF" android:indeterminateTint="#A88AFF" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:layout_marginTop="28dp" android:text="Сохраняй только музыку, на загрузку которой у тебя есть разрешение."
+      android:gravity="center" android:textColor="#686278" android:textSize="11sp" />
+  </LinearLayout>
+</ScrollView>
